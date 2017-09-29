@@ -18,7 +18,7 @@ to be as powerful as the hardware it's being deployed on.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p0
+%patch0 -p1
 
 %build
 
