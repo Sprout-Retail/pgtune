@@ -1,14 +1,16 @@
 Summary:	PostgreSQL Config Tuner
 Name:		pgtune
 Version:	0.9.2
-Release:	1%{?dist}
+Release:	99%{?dist}
 License:	BSD
 Group:		Applications/Databases
-URL:		http://pgfoundry.org/projects/pgtune
+URL:		https://github.com/gregs1104/pgtune
+# Actually forked at https://github.com/Invotas/pgtune 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
-Source0:	http://pgfoundry.org/frs/download.php/2445/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.gz
 Patch0:		pgtune-settingsdir.patch
+
+
 Requires:	postgresql-server
 Buildarch:	noarch
 
@@ -35,12 +37,14 @@ rm -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
-%doc TODO COPYRIGHT
+%doc TODO.rst README.rst COPYRIGHT
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
 %attr(755,root,root) %{_bindir}/pgtune
 
 %changelog
+* Fri Sep 29 2017 Martin Langhoff <martin@laptop.org> 0.9.2-99
+- Built from https://github.com/Invotas/pgtune
 * Wed Oct 28 2009 Devrim Gunduz <devrim@commandprompt.com> 0.9.1-1
 - Initial packaging for PostgreSQL RPM Repository
 * Wed Oct 28 2009 Greg Smith <gsmith@gregsmith.com> 0.9.2-1
