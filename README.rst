@@ -10,20 +10,11 @@ Installation/Usage
 Source installation
 -------------------
 
-There is no need to build/compile pgtune, it is a Python script.
-Extracting the tarball to a convenient location is sufficient.
+There is no need to build/compile pgtune, it is a Python3 script.
+Extracting it to a convenient location is sufficient.
 Note that you will need the multiple
 pg_settings-<version>_<architecture> files included with the
 program too, pgtune can't work without those.
-
-RPM Installation
-----------------
-
-The RPM package installs:
-
- * The pgtune binary under/usr/bin
- * Documents in /usr/share/doc/pgtune-$version
- * Setting files in /usr/share/pgtune
 
 Using pgtune
 ============
@@ -73,13 +64,6 @@ Here is a typical usage for an initial FINCAD setup including enabling logging:
   python pgtune -V 9.5 -T OLTP -c 100 -L True -i $PGDATA/postgresql.conf -o $PGDATA/postgresql.conf.9.5-with_logging
 
 If logging is not required then remove the "-L True" command line option.
-
-
-Todo
-====
-
-A TODO list is included in the tarball.  There are also some TODO
-items marked in the source code itself.
 
 Bugs
 ====
