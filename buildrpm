@@ -1,4 +1,0 @@
-#!/bin/bash
-
-git archive --prefix=pgtune-0.9.2/  HEAD | gzip -9 > pgtune-0.9.2.tar.gz
-fedpkg --release el7 local
